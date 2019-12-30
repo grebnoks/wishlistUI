@@ -1,0 +1,47 @@
+<div class="example-container">
+  <div (click)="showAddItem=true">
+    <h3 class="gift--addition" >click here to add a gift to your wishlist!</h3>
+  </div>
+  <div *ngIf="showAddItem" class="add--form">
+    <form id="addItemFormGroup" [formGroup]="addItemFormGroup" (ngSubmit)="onSubmit()">
+      <mat-grid-list cols="1" rowHeight="2:1">
+        <mat-grid-tile>
+        <!--<mat-grid-tile [colspan]="2" [rowspan]="1">-->
+          <mat-form-field appearance="standard">
+            <mat-label>Name of gift</mat-label>
+            <input matInput placeholder="whatchuwant" formControlName="nameInput">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        <!--<mat-grid-tile [colspan]="2" [rowspan]="1">-->
+          <mat-form-field appearance="standard">
+            <mat-label>Approximate Cost</mat-label>
+            <input matInput placeholder="Amount" formControlName="priceInput">
+            <span matPrefix>$</span>
+            <!--<span matSuffix>.00</span>-->
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        <!--<mat-grid-tile [colspan]="2" [rowspan]="1">-->
+          <mat-form-field appearance="standard">
+            <mat-label>Recipient</mat-label>
+            <input matInput placeholder="Who is the gift for" formControlName="recipientInput">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        <!--<mat-grid-tile [colspan]="2" [rowspan]="1">-->
+          <mat-form-field appearance="standard">
+            <mat-label>Location</mat-label>
+            <input matInput placeholder="Where can the gift be bought" formControlName="locationInput">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        <!--<mat-grid-tile [colspan]="2">-->
+          <button mat-raised-button class="primaryButton" color="primary" type="submit">submit</button>
+          &nbsp;
+          <button mat-raised-button color="warn" (click)="showAddItem=false">cancel</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </div>
+</div>

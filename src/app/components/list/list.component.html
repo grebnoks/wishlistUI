@@ -1,0 +1,42 @@
+<div>
+  <div *ngIf="!isListEmpty" class="border">
+    <h2>Current wish list</h2>
+    <mat-grid-list *ngFor="let item of wishList; let itemIndex = index" cols="10" rowHeight="100px" class="list--item">
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.name }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{item.recipient}}'s Gift Request
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-panel-description>
+          <div>
+            <span class="description--span">Can be purchased at: </span>{{item.location}}
+          </div>
+          <div class="cost--div">
+            <span class="description--span">Approximate Cost:</span> ${{item.price}}
+          </div>
+
+        </mat-panel-description>
+
+        <mat-action-row>
+          <button mat-flat-button color="warn">EDIT(not available at this time)</button>
+          <button mat-flat-button color="warn" (click)="deleteItem(item)">DELETE</button>
+        </mat-action-row>
+
+      </mat-expansion-panel>
+    </mat-grid-list>
+  </div>
+  <div *ngIf="isListEmpty" class="border">
+    <h2>Current wish list is empty</h2>
+    <h2><-------------------------</h2>
+    <h2> Click here to add a gift! </h2>
+    <h2><-------------------------</h2>
+  </div>
+
+
+</div>

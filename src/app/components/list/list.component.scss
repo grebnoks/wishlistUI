@@ -1,0 +1,30 @@
+.border {
+  border: solid 1px #ddd;
+  padding: 1.25em;
+  margin: 1.125em 0;
+  text-align: center;
+}
+
+.list--item {
+  display: inline;
+  padding: 0 24px;
+  margin: 1.125em 0;
+}
+
+mat-action-row {
+  justify-content: center;
+}
+
+mat-panel-description {
+  color: rgba(0, 0, 0, .87);
+}
+
+.description--span {
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.cost--div {
+  display: flex;
+  margin-left: auto;
+}
